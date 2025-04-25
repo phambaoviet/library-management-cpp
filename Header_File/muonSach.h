@@ -7,7 +7,6 @@ using namespace std;
 #define MAX_DOC_GIA 1000 // Số lượng độc giả tối đa
 
 // Biến toàn cục quản lý phiếu mượn
-//extern int maDocGiaMuon[MAX_DOC_GIA];
 extern char ngayMuon[MAX_DOC_GIA][15];
 extern char ngayTraDuKien[MAX_DOC_GIA][15];
 extern char ngayTraThucTe[MAX_DOC_GIA][15];

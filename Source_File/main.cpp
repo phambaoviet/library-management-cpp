@@ -6,10 +6,9 @@
 #include "../Header_File/muonSach.h"
 #include "../Header_File/traSach.h"
 #include "../Header_File/thongKe.h"
-// #include <thongkesach.h>
+
 using namespace std;
-// void quanLyDocGia(); // Khai báo hàm quản lý độc giả
-// void quanLySach(); // Khai báo hàm quản lý sách
+
 void hienThiMeNu() {
     int luaChon;
     do
@@ -29,13 +28,13 @@ void hienThiMeNu() {
                 // Gọi hàm quản lý độc giả 
                 khoiTaoDocGia(); // Khởi tạo độc giả
                 quanLyDocGia();
-                //cout << "Chuc nang quan ly doc gia chua duoc hoan thanh!" << endl;
+                
                 break;
             case 2:
                 // Gọi hàm quản lý sách
                 khoiTaoSach(); // Khởi tạo sách
                 quanLySach();
-                //cout << "Chuc nang quan ly sach chua duoc hoan thanh!" << endl;
+                
                 break;
             case 3:
                 // Gọi hàm lập phiếu mượn sách
@@ -61,14 +60,5 @@ void hienThiMeNu() {
 }
 int main() {
     hienThiMeNu();                  // Gọi hàm hiển thị 
-    // //khoiTaoDocGia();              // Gọi hàm khởi tạo độc giả
-    // quanLyDocGia();             // Gọi hàm quản lý độc giả
-    // //khoiTaoSach();              // Gọi hàm khởi tạo sách
-    // quanLySach();             // Gọi hàm quản lý sách
-    // muonSach();             // Gọi hàm quản lý mượn sách
-    
-    // cout << "Cam on ban da su dung chuong trinh!" << endl;
-    // cout << "Hen gap lai!" << endl;
-    // cout << "==========================================================" << endl;
     return 0;
 }

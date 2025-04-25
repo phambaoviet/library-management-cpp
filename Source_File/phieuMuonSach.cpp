@@ -10,15 +10,14 @@
 using namespace std;
 
 
-//int maDocGia[MAX_DOC_GIA];
-char ngayMuon[MAX_DOC_GIA][15];
-char ngayTraDuKien[MAX_DOC_GIA][15];
-char ngayTraThucTe[MAX_DOC_GIA][15];
-long long danhSachISBNMuon[MAX_DOC_GIA][MAX_SACH_MUON];
-int soLuongSachMuon[MAX_DOC_GIA];
-int soLuongDocGia = 6;
-int soSachMuon = 0;  
-int soPhieuMuon;
+// char ngayMuon[MAX_DOC_GIA][15];
+// char ngayTraDuKien[MAX_DOC_GIA][15];
+// char ngayTraThucTe[MAX_DOC_GIA][15];
+// long long danhSachISBNMuon[MAX_DOC_GIA][MAX_SACH_MUON];
+// int soLuongSachMuon[MAX_DOC_GIA];
+// int soLuongDocGia = 6;
+// int soSachMuon = 0;  
+// int soPhieuMuon;
 
 int timKiemSachTheoTen(char tenSachCanTim[50]) {
     for (int i = 0; i < soLuongSach; i++) {

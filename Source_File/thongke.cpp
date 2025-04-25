@@ -86,6 +86,12 @@ void thongKeDocGiaTreHan(){
             if (ngayThucTe > ngayDuKien) {
                 treHan++;
                 cout << "- " << hoTen[i] << endl;
+                cout << "  CMND: " << cmnd[i] << endl;
+                cout << "  Ngay muon: " << ngayMuon[i] << endl;
+                cout << "  Ngay tra du kien: " << ngayTraDuKien[i] << endl;
+                cout << "  Ngay tra thuc te: " << ngayTraThucTe[i] << endl;
+                cout << "  So sach muon: " << soLuongSachMuon[i] << endl;
+
             }
         }
     }
@@ -106,6 +112,7 @@ void thongKe(){
     cout << "4. Thong ke so luong doc gia theo gioi tinh" << endl;
     cout << "5. Thong ke so sach dang duoc muon" << endl;
     cout << "6. Thong ke so danh sach doc gia bi tre han" << endl;
+    cout << "0. Quay lai menu chinh" << endl;
     cout << "Nhap lua chon: ";
     cin >> luaChon;
 

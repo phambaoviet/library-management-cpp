@@ -4,15 +4,15 @@
 #include <cstring>
 using namespace std;
 
-int soLuongSach = 8; // Số lượng sách hiện có
-long long ISBN[MAX_SACH];
-char tenSach[MAX_SACH][50];
-char tacGia[MAX_SACH][50];
-char theLoai[MAX_SACH][20];
-char nhaXuatBan[MAX_SACH][50];
-int namXuatBan[MAX_SACH];
-int giaSach[MAX_SACH];
-int soLuong[MAX_SACH];
+//int soLuongSach = 8; // Số lượng sách hiện có
+// long long ISBN[MAX_SACH];
+// char tenSach[MAX_SACH][50];
+// char tacGia[MAX_SACH][50];
+// char theLoai[MAX_SACH][20];
+// char nhaXuatBan[MAX_SACH][50];
+// int namXuatBan[MAX_SACH];
+// int giaSach[MAX_SACH];
+// int soLuong[MAX_SACH];
 
 // Hàm khởi tạo sách
 void khoiTaoSach(){
@@ -27,27 +27,27 @@ void khoiTaoSach(){
     giaSach[0] = 50000;
 
     ISBN[1] = 9780131103627;
-    strcpy(tenSach[1], "Canh dong bat tan");
-    strcpy(tacGia[1], "Nguyen Ngoc Tu");
-    strcpy(theLoai[1], "Truyen ngan");
+    strcpy(tenSach[1], "Nha gia kim");
+    strcpy(tacGia[1], "Paulo Coelho");
+    strcpy(theLoai[1], "Khoa hoc vien tuong");
     strcpy(nhaXuatBan[1], "NXB Kim Dong");
     namXuatBan[1] = 2021;
     soLuong[1] = 5; // Số lượng sách hiện có
     giaSach[1] = 55000;
 
     ISBN[2] = 9780132350884;
-    strcpy(tenSach[2], "Hoa vang tren co xanh");
-    strcpy(tacGia[2], "Nguyen Nhat Anh");
-    strcpy(theLoai[2], "Truyen ngan");
-    strcpy(nhaXuatBan[2], "NXB Kim Dong");
+    strcpy(tenSach[2], "Ke an hon");
+    strcpy(tacGia[2], "Thao Trang");
+    strcpy(theLoai[2], "Kinh di");
+    strcpy(nhaXuatBan[2], "NXB Thanh Nien");
     namXuatBan[2] = 2019;
     soLuong[2] = 8; // Số lượng sách hiện có
     giaSach[2] = 600000;
 
     ISBN[3] = 9780134685991;
-    strcpy(tenSach[3], "Hanh trinh vao rung Nam");
-    strcpy(tacGia[3], "Doan Gioi");
-    strcpy(theLoai[3], "Truyen ngan");
+    strcpy(tenSach[3], "Bo gia");
+    strcpy(tacGia[3], "Mario Puzo");
+    strcpy(theLoai[3], "Khoa hoc vien tuong");
     strcpy(nhaXuatBan[3], "NXB Kim Dong");
     namXuatBan[3] = 2017;
     soLuong[3] = 12; // Số lượng sách hiện có
@@ -64,10 +64,10 @@ void khoiTaoSach(){
 
 
     ISBN[5] = 9780132350884;
-    strcpy(tenSach[5], "Hoi uc tuoi tho");
-    strcpy(tacGia[5], "Phung Quan");
-    strcpy(theLoai[5], "Tu truyen");
-    strcpy(nhaXuatBan[5], "NXB Kim Dong");
+    strcpy(tenSach[5], "Tet o lang dia nguc");
+    strcpy(tacGia[5], "Thao Trang");
+    strcpy(theLoai[5], "Kinh di");
+    strcpy(nhaXuatBan[5], "NXB Thanh Nien");
     namXuatBan[5] = 2009;
     soLuong[5] = 15; // Số lượng sách hiện có
     giaSach[5] = 70000;
@@ -82,10 +82,10 @@ void khoiTaoSach(){
     giaSach[6] = 90000;
    
     ISBN[7] = 9780134686097;
-    strcpy(tenSach[7], "So Do");
-    strcpy(tacGia[7], "Vu Trong Phung");
-    strcpy(theLoai[7], "Truyen ngan");
-    strcpy(nhaXuatBan[7], "NXB Van Hoc");
+    strcpy(tenSach[7], "Noi buon chien tranh");
+    strcpy(tacGia[7], "Bao Ninh");
+    strcpy(theLoai[7], "Tieu thuyet");
+    strcpy(nhaXuatBan[7], "NXB Tre");
     namXuatBan[7] = 2008;
     soLuong[7] = 30; // Số lượng sách hiện có
     giaSach[7] = 90000;
@@ -249,6 +249,8 @@ void xoaSach() {
     cout << "Nha Xuat Ban: " << nhaXuatBan[index]  << endl;
     cout << "Nam Xuat Ban: " << namXuatBan[index] << endl;
     cout << "Gia Sach: " << giaSach[index] << endl;
+    cout << "So Luong: " << soLuong[index] << endl;
+    cout << "===================================================" << endl;
 
     cout << "Ban co chac chan muon xoa sach nay khong? (y/n): ";
     char xacNhan;
@@ -322,23 +324,25 @@ void timKiemSachTheoISBN(){
     // Hiển thị thông tin sách tìm thấy
     cout << "Thong tin sach tim thay:" << endl;
     cout << left << setw(15) << "ISBN" 
-         << setw(30) << "Ten Sach" 
-         << setw(30) << "Tac Gia" 
+         << setw(20) << "Ten Sach" 
+         << setw(20) << "Tac Gia" 
          << setw(20) << "The Loai" 
-         << setw(30) << "Nha Xuat Ban" 
+         << setw(20) << "Nha Xuat Ban" 
          << setw(10) << "Nam XB" 
          << setw(10) << "Gia Sach" 
+         << setw(10) << "Hien con"
          << endl;
     
-    cout << "----------------------------------------------------------------------------------------------------------------------" << endl;
+    cout << "---------------------------------------------------------------------------------------------------------------------------" << endl;
 
     cout << left << setw(15) << ISBN[index]
-         << setw(30) << tenSach[index]
-         << setw(30) << tacGia[index]
+         << setw(20) << tenSach[index]
+         << setw(20) << tacGia[index]
          << setw(20) << theLoai[index]
-         << setw(30) << nhaXuatBan[index]
+         << setw(20) << nhaXuatBan[index]
          << setw(10) << namXuatBan[index]
          << setw(10) << giaSach[index]
+         << setw(10) << soLuong[index]
          << endl;
 }
 // Hàm tìm kiếm sách theo tên sách
@@ -380,23 +384,25 @@ void timKiemSachTheoTenSach(){
     // Hiển thị thông tin sách tìm thấy
     cout << "Thong tin sach tim thay:" << endl;
     cout << left << setw(15) << "ISBN" 
-         << setw(30) << "Ten Sach" 
-         << setw(30) << "Tac Gia" 
+         << setw(20) << "Ten Sach" 
+         << setw(20) << "Tac Gia" 
          << setw(20) << "The Loai" 
-         << setw(30) << "Nha Xuat Ban" 
+         << setw(20) << "Nha Xuat Ban" 
          << setw(10) << "Nam XB" 
          << setw(10) << "Gia Sach" 
+         << setw(10) << "Hien con"
          << endl;
 
-    cout << "----------------------------------------------------------------------------------------------------------------------" << endl;
+    cout << "---------------------------------------------------------------------------------------------------------------------------" << endl;
 
     cout << left << setw(15) << ISBN[index]
-         << setw(30) << tenSach[index]
-         << setw(30) << tacGia[index]
+         << setw(20) << tenSach[index]
+         << setw(20) << tacGia[index]
          << setw(20) << theLoai[index]
-         << setw(30) << nhaXuatBan[index]
+         << setw(20) << nhaXuatBan[index]
          << setw(10) << namXuatBan[index]
          << setw(10) << giaSach[index]
+         << setw(10) << soLuong[index]
          << endl;
 }
 
@@ -411,7 +417,7 @@ void quanLySach(){
         cout << "4. Xoa thong tin sach" << endl;
         cout << "5. Tim kiem sach theo ISBN" << endl;
         cout << "6. Tim kiem sach theo ten sach" << endl;
-        cout << "Quay lai menu chinh" << endl;
+        cout << "0. Quay lai menu chinh" << endl;
         cout << "Nhap lua chon: ";
         cin >> luaChon;
 

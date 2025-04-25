@@ -21,14 +21,9 @@ int chuyenNgayThanhSo(char ngay[]){
     sscanf(ngay, "%d/%d/%d", &day, &month, &year);
     return (year*12*30) + (month*30) + day; // Chuyển đổi thành số ngày (giả sử mỗi tháng là 30 ngày)
 }
-#include <iostream>
-#include <iomanip>  // Để sử dụng setw, left
-#include <cstring>
-#include "../Header_File/muonSach.h"
-#include "../Header_File/docgia.h"
-#include "../Header_File/quanlysach.h"
 
-using namespace std;
+
+
 void traSach() {
     int maDocGiaNhap;
     cout << "Nhap ma doc gia: ";

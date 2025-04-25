@@ -4,15 +4,15 @@
 #include "../Header_File/docgia.h"
 using namespace std;
 
-int maDocGia[MAX_DOC_GIA];
-char hoTen[MAX_DOC_GIA][50];
-char ngaySinh[MAX_DOC_GIA][20];
-char gioiTinh[MAX_DOC_GIA][10];
-char cmnd[MAX_DOC_GIA][20];
-char diaChi[MAX_DOC_GIA][100]; 
-char email[MAX_DOC_GIA][50];
-char ngayLapThe[MAX_DOC_GIA][20];
-char ngayHetHan[MAX_DOC_GIA][20];
+// int maDocGia[MAX_DOC_GIA];
+// char hoTen[MAX_DOC_GIA][50];
+// char ngaySinh[MAX_DOC_GIA][20];
+// char gioiTinh[MAX_DOC_GIA][10];
+// char cmnd[MAX_DOC_GIA][20];
+// char diaChi[MAX_DOC_GIA][100]; 
+// char email[MAX_DOC_GIA][50];
+// char ngayLapThe[MAX_DOC_GIA][20];
+// char ngayHetHan[MAX_DOC_GIA][20];
 void khoiTaoDocGia() {
     maDocGia[0] = 101;
     strcpy(hoTen[0], "Nguyen Van Nam");
@@ -390,7 +390,7 @@ void quanLyDocGia() {
         cout << "4. Xoa thong tin doc gia" << endl;
         cout << "5. Tim kiem doc gia theo CMND" << endl;
         cout << "6. Tim kiem sach theo ho ten" << endl;
-        cout << "Quay lai menu chinh" << endl;
+        cout << "0. Quay lai menu chinh" << endl;
         cout << "Nhap lua chon: ";
         cin >> luaChon;
     
