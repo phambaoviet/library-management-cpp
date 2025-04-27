@@ -1,24 +1,28 @@
+/*
+    File: quanlysach.cpp
+    Mô tả: 
+        - Định nghĩa các hàm xử lý chức năng quản lý sách trong thư viện.
+        - Các chức năng bao gồm:
+            + khoiTaoSach()
+            + xemDanhSachSach()
+            + themSach()
+            + chinhSuaSach()
+            + xoaSach() 
+            + timKiemSachTheoISBN()
+            + timKiemSachTheoTenSach()
+    Người thực hiện: Phạm Bảo Việt - Nhập môn lập trình
+*/
 #include "../Header_File/quanlysach.h"
 #include <iostream>
 #include <iomanip>
 #include <cstring>
 using namespace std;
 
-//int soLuongSach = 8; // Số lượng sách hiện có
-// long long ISBN[MAX_SACH];
-// char tenSach[MAX_SACH][50];
-// char tacGia[MAX_SACH][50];
-// char theLoai[MAX_SACH][20];
-// char nhaXuatBan[MAX_SACH][50];
-// int namXuatBan[MAX_SACH];
-// int giaSach[MAX_SACH];
-// int soLuong[MAX_SACH];
-
 // Hàm khởi tạo sách
 void khoiTaoSach(){
     // Thêm một số sách mẫu vào danh sách
     ISBN[0] = 9781234567890;
-    strcpy(tenSach[0], "Ngay xua co mot truyen tinh");
+    strcpy(tenSach[0], "Ngay xua co mot truyen tinh");      
     strcpy(tacGia[0], "Nguyen Nhat Anh");
     strcpy(theLoai[0], "Truyen ngan");
     strcpy(nhaXuatBan[0], "NXB Kim Dong");
@@ -32,7 +36,7 @@ void khoiTaoSach(){
     strcpy(theLoai[1], "Khoa hoc vien tuong");
     strcpy(nhaXuatBan[1], "NXB Kim Dong");
     namXuatBan[1] = 2021;
-    soLuong[1] = 5; // Số lượng sách hiện có
+    soLuong[1] = 5; 
     giaSach[1] = 55000;
 
     ISBN[2] = 9780132350884;
@@ -41,7 +45,7 @@ void khoiTaoSach(){
     strcpy(theLoai[2], "Kinh di");
     strcpy(nhaXuatBan[2], "NXB Thanh Nien");
     namXuatBan[2] = 2019;
-    soLuong[2] = 8; // Số lượng sách hiện có
+    soLuong[2] = 8; 
     giaSach[2] = 600000;
 
     ISBN[3] = 9780134685991;
@@ -50,7 +54,7 @@ void khoiTaoSach(){
     strcpy(theLoai[3], "Khoa hoc vien tuong");
     strcpy(nhaXuatBan[3], "NXB Kim Dong");
     namXuatBan[3] = 2017;
-    soLuong[3] = 12; // Số lượng sách hiện có
+    soLuong[3] = 12; 
     giaSach[3] = 80000;
 
     ISBN[4] = 9780134686092;
@@ -59,7 +63,7 @@ void khoiTaoSach(){
     strcpy(theLoai[4], "Tu Truyen");
     strcpy(nhaXuatBan[4], "NXB Quan Doi");
     namXuatBan[4] = 2023;
-    soLuong[4] = 20; // Số lượng sách hiện có
+    soLuong[4] = 20; 
     giaSach[4] = 100000;
 
 
@@ -69,7 +73,7 @@ void khoiTaoSach(){
     strcpy(theLoai[5], "Kinh di");
     strcpy(nhaXuatBan[5], "NXB Thanh Nien");
     namXuatBan[5] = 2009;
-    soLuong[5] = 15; // Số lượng sách hiện có
+    soLuong[5] = 15; 
     giaSach[5] = 70000;
 
     ISBN[6] = 9780134685999;
@@ -78,7 +82,7 @@ void khoiTaoSach(){
     strcpy(theLoai[6], "Truyen ngan");
     strcpy(nhaXuatBan[6], "NXB Van hoc");
     namXuatBan[6] = 2017;
-    soLuong[6] = 25; // Số lượng sách hiện có
+    soLuong[6] = 25; 
     giaSach[6] = 90000;
    
     ISBN[7] = 9780134686097;
@@ -87,7 +91,7 @@ void khoiTaoSach(){
     strcpy(theLoai[7], "Tieu thuyet");
     strcpy(nhaXuatBan[7], "NXB Tre");
     namXuatBan[7] = 2008;
-    soLuong[7] = 30; // Số lượng sách hiện có
+    soLuong[7] = 30; 
     giaSach[7] = 90000;
    
 
@@ -125,6 +129,18 @@ void xemDanhSachSach() {
 }
 // Hàm thêm sách
 void themSach() {
+    // Code thêm sách
+    cout << "Them sach" << endl;
+    if (soLuongSach >= MAX_SACH)
+    {
+        cout << "Khong the them sach, danh sach da day!!!" << endl;
+    }
+    int index = soLuongSach; // Lấy vị trí trống tiếp theo
+    cout << "Nhap ISBN: ";
+    cin >> ISBN[index];
+    cin.ignore(); // Bỏ qua ký tự newline còn lại trong bộ đệm
+
+    // Kiểm tra ISBN đã tồn tại hay chưa
     bool daTonTai = false;
     for (int i = 0; i < soLuongSach; i++)
     {
@@ -140,21 +156,10 @@ void themSach() {
         return;
     }
     
-    
-    cout << "Them sach" << endl;
-    // Code thêm sách
-    if (soLuongSach > MAX_SACH)
-    {
-        cout << "Khong the them sach, danh sach da day!!!" << endl;
-    }
-    int index = soLuongSach; // Lấy vị trí trống tiếp theo
-    cout << "Nhap ISBN: ";
-    cin >> ISBN[index];
-    cin.ignore(); // Bỏ qua ký tự newline còn lại trong bộ đệm
     cout << "Nhap ten sach: ";
     cin.getline(tenSach[index], 50);
     cout << "Nhap tac gia: ";
-    cin.getline(tenSach[index], 50);
+    cin.getline(tacGia[index], 50);
     cout << "Nhap the loai: ";
     cin.getline(theLoai[index], 20);
     cout << "Nhap nha xuat ban: ";
@@ -167,11 +172,11 @@ void themSach() {
     cin >> giaSach[index];
     soLuongSach++; // Tăng số lượng sách
     cout << "Them sach thanh cong!" << endl;
-    
+    // In danh sách sách sau khi thêm
+    xemDanhSachSach();
 }
 void chinhSuaSach(){
     cout << "Chinh sua sach" << endl;
-    // Code chỉnh sửa sách
     long long isbnCanChinhSua;
     cout << "Nhap ISBN sach can chinh sua: ";
     cin >> isbnCanChinhSua;
@@ -205,6 +210,8 @@ void chinhSuaSach(){
     cout << "Nhap gia sach moi: ";
     cin >> giaSach[index];
     cout << "Chinh sua sach thanh cong!" << endl;
+    cout << "=========================================================== DANH SACH SACH HIEN TAI ===================================================" << endl;
+    xemDanhSachSach();
 }
 // Hàm xoá sách
 void xoaSach() {
@@ -275,24 +282,8 @@ void xoaSach() {
     soLuongSach--;
 
     cout << "Xoa sach thanh cong!" << endl;
-    // in danh sách sách sau khi xóa
-    cout << "======================================== DANH SACH SACH ========================================" << endl;
-    for (int i = 0; i < soLuongSach; i++)
-    {
-        if (ISBN[i] != 0)
-        {
-            cout << left << setw(15) << ISBN[i] 
-                 << setw(30) << tenSach[i] 
-                 << setw(20) << tacGia[i]
-                 << setw(20) << nhaXuatBan[i] 
-                 << setw(15) << namXuatBan[i] 
-                 << setw(20) << theLoai[i]
-                 << setw(10) << giaSach[i] 
-                 << setw(10) << soLuong[i]
-                 << endl;
-        }
-        
-    }
+    // In danh sách sách sau khi xóa
+    xemDanhSachSach();
     
 }
 // Hàm tìm kiếm sách theo ISBN
@@ -451,9 +442,3 @@ void quanLySach(){
 }
 
 
-// int main(){
-//     khoiTaoSach(); // Gọi hàm khởi tạo sách
-//     quanLySach(); // Gọi hàm quản lý sách
-
-//     return 0;
-// }

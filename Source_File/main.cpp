@@ -19,7 +19,7 @@ void hienThiMeNu() {
         cout << "3. Lap phieu muon sach" << endl;
         cout << "4. Lap phieu tra sach" << endl;
         cout << "5. Thong ke sach" << endl;
-        cout << "Thoat" << endl;
+        cout << "0. Thoat" << endl;
         cout << "Nhap lua chon: ";
         cin >> luaChon;
 

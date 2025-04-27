@@ -1,21 +1,25 @@
+/*
+    File: docgia.cpp
+    Mô tả: 
+        - Quản lý thông tin độc giả trong thư viện.
+        - Bao gồm các chức năng:
+            + khoiTaoDocGia()
+            + xemDanhSachDocGia()
+            + themDocGia()
+            + chinhSuaDocGia()
+            + xoaDocGia()
+    Người thực hiện: Phạm Bảo Việt - Nhập môn lập trình
+*/
 #include <iostream>
 #include <iomanip>
 #include <cstring>
 #include "../Header_File/docgia.h"
 using namespace std;
 
-// int maDocGia[MAX_DOC_GIA];
-// char hoTen[MAX_DOC_GIA][50];
-// char ngaySinh[MAX_DOC_GIA][20];
-// char gioiTinh[MAX_DOC_GIA][10];
-// char cmnd[MAX_DOC_GIA][20];
-// char diaChi[MAX_DOC_GIA][100]; 
-// char email[MAX_DOC_GIA][50];
-// char ngayLapThe[MAX_DOC_GIA][20];
-// char ngayHetHan[MAX_DOC_GIA][20];
+
 void khoiTaoDocGia() {
     maDocGia[0] = 101;
-    strcpy(hoTen[0], "Nguyen Van Nam");
+    strcpy(hoTen[0], "Nguyen Van Nam");             // Copy chuỗi vào mảng
     strcpy(cmnd[0], "123456789");
     strcpy(ngaySinh[0], "01/01/1990");
     strcpy(gioiTinh[0], "Nam");
@@ -114,12 +118,12 @@ void themDocGia(){
     {
         cout << "Khong the them doc gia, danh sach da day!!!" << endl;
     }
-    int index = soLuongDocGia; // Lấy vị trí trống tiếp theo
+    int index = soLuongDocGia;              // Lấy vị trí trống tiếp theo
     cout << "Nhap ma doc gia: ";
     cin >> maDocGia[index];
     cin.ignore(); // Xóa bộ đệm
     cout << "Nhap ho ten doc gia: ";
-    cin.getline(hoTen[index], 50);
+    cin.getline(hoTen[index], 50);          // Nhập tên độc giả, cho phép có khoảng trắng
     cout << "Nhap CMND: ";
     cin.getline(cmnd[index], 20);
     cout << "Nhap ngay sinh (dd/mm/yyyy): ";
@@ -142,7 +146,7 @@ void themDocGia(){
 
     // Thêm 48 tháng (4 năm)
     month += 48;
-    while (month > 12) {  // Sửa thành month > 12 (không phải year > 12)
+    while (month > 12) {  
         month -= 12;
         year++;
     }
@@ -166,9 +170,6 @@ void chinhSuaDocGia(){
     cin >> ma;
     int index = -1;
     while (true) {
-        cout << "Nhap ma doc gia can chinh sua: ";
-        cin >> ma;
-
         // Tìm độc giả theo mã
         index = -1;
         for (int i = 0; i < soLuongDocGia; i++) {
@@ -304,11 +305,8 @@ void xoaDocGia(){
 
     cout << "Xoa doc gia thanh cong!\n";
     // In danh sách độc giả sau khi xoá
-    for (int i = 0; i < soLuongDocGia; i++) {
-        if (maDocGia[i] != 0) {  // Chỉ in nếu mã độc giả hợp lệ
-            cout << "Ma: " << maDocGia[i] << " - Ho Ten: " << hoTen[i] << " - CMND: " << cmnd[i] << " - Ngay Sinh: " << ngaySinh[i] << " - Gioi Tinh: " << gioiTinh[i] << endl;
-        }
-    }
+    cout << "====================================================== DANH SACH DOC GIA HIEN TAI ======================================================" << endl;
+    xemDanhSachDocGia();
 }
 // Hàm tìm độc giả theo cmnd
 void timDocGiaTheoCMND(){
@@ -422,8 +420,3 @@ void quanLyDocGia() {
         }
     } while (luaChon != 0);
 }
-// int main(){
-//     khoiTaoDocGia(); // Gọi hàm khởi tạo độc giả
-//     quanLyDocGia(); // Gọi hàm quản lý độc giả
-//     return 0;
-// }

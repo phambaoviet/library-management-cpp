@@ -1,3 +1,12 @@
+/*
+    File: muonSach.cpp
+    Mô tả: 
+        - Cung cấp chức năng mượn sách cho thư viện.
+        - Bao gồm các hàm:
+            + timKiemSachTheoTen(): Tìm kiếm sách trong thư viện theo tên sách.
+            + muonSach(): Thực hiện quá trình mượn sách cho độc giả.
+    Người thực hiện: Phạm Bảo Việt - Nhập môn lập trình
+*/
 #include <iostream>
 #include <cstring>
 #include "../Header_File/muonSach.h"
@@ -5,19 +14,8 @@
 #include "../Header_File/quanlysach.h"
 
 
-
-
 using namespace std;
 
-
-// char ngayMuon[MAX_DOC_GIA][15];
-// char ngayTraDuKien[MAX_DOC_GIA][15];
-// char ngayTraThucTe[MAX_DOC_GIA][15];
-// long long danhSachISBNMuon[MAX_DOC_GIA][MAX_SACH_MUON];
-// int soLuongSachMuon[MAX_DOC_GIA];
-// int soLuongDocGia = 6;
-// int soSachMuon = 0;  
-// int soPhieuMuon;
 
 int timKiemSachTheoTen(char tenSachCanTim[50]) {
     for (int i = 0; i < soLuongSach; i++) {
@@ -74,7 +72,7 @@ void muonSach(){
         int indexSach = timKiemSachTheoTen(tenSachCanTim);
         if (indexSach == -1) {
             cout << "Khong tim thay sach voi ten: " << tenSachCanTim << ". Vui long nhap lai.\n";
-            i--;  // Cho nhập lại
+            i--;  
         } else {
             danhSachISBNMuon[viTriDocGia][i] = ISBN[indexSach];
             soLuong[indexSach]--;
@@ -93,8 +91,3 @@ void muonSach(){
 
     cout << "Phieu muon sach da duoc tao thanh cong!\n";
 }
-// int main(){
-//     khoiTaoDocGia();
-//     muonSach();
-//     return 0;
-// }

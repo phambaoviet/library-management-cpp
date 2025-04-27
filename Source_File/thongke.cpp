@@ -1,11 +1,29 @@
+/*
+    File: thongke.cpp
+    Mô tả: 
+        - Cung cấp chức năng mượn sách cho thư viện.
+        - Bao gồm các hàm:
+            + thongKeSoLuongSach()
+            + thongKeSachTheoTheLoai()
+            + thongKeDocGia()
+            + thongKeSoLuongDocGiaTheoGioiTinh()
+            + thongKeSoSachDangDuocMuon()
+            + thongKeDocGiaTreHan()
+            + thongKe()
+    Người thực hiện: Phạm Bảo Việt - Nhập môn lập trình
+*/
+
 #include <iostream>
-using namespace std;
+
 #include "../Header_File/thongKe.h"
 #include "../Header_File/quanlysach.h"
 #include "../Header_File/docgia.h"
 #include "../Header_File/muonSach.h"
 #include "../Header_File/traSach.h"
 
+using namespace std;
+
+// Hàm thống kê tổng số lượng sách trong thư viện
 void thongKeSoLuongSach(){
     int tong = 0;
     for (int i = 0; i < soLuongSach; i++)
@@ -14,29 +32,31 @@ void thongKeSoLuongSach(){
     }
     cout << "Tong so luong sach trong thu vien: " << tong << endl;
 }
+// Hàm thống kê sách theo từng thể loại
 void thongKeSachTheoTheLoai(){
     char theLoaiDem[MAX_SACH][30];
     int soLuongTheLoai[MAX_SACH] = {0};
     int dem = 0;
     for (int i = 0; i < soLuongSach; i++)
     {
-        bool daCo = false;
+        bool daCo = false;              // Kiểm tra thể loại sách đã tồn tại trong mảng chưa??
         for (int j = 0; j < dem; j++)
         {
             if (strcmp(theLoaiDem[j], theLoai[i]) == 0)
             {
-                soLuongTheLoai[j] += soLuong[i];
+                soLuongTheLoai[j] += soLuong[i];        // Nếu có thì cộng thêm
                 daCo = true;
                 break;
             }
         }
-        if (!daCo)
+        if (!daCo)        // Nếu không có thì thêm vào mảng
         {
             strcpy(theLoaiDem[dem], theLoai[i]);
             soLuongTheLoai[dem] = soLuong[i];
             dem++;
         }
     }
+    // In danh sách thể loại và số lượng
     cout << "==================== THONG KE SACH THEO THE LOAI ====================" << endl;
     cout << left << setw(20) << "The Loai" << setw(20) << "So Luong" << endl;
     for (int i = 0; i < dem; i++)
@@ -45,6 +65,7 @@ void thongKeSachTheoTheLoai(){
     }
     
 }
+// Hàm thống kê tổng số độc giả
 void thongKeDocGia(){
     cout << "==================== THONG KE DOC GIA ====================" << endl;
     cout << soLuongDocGia << endl;
@@ -66,25 +87,28 @@ void thongKeSoLuongDocGiaTheoGioiTinh(){
     cout << "Nam: " << nam << endl;
     cout << "Nu: " << nu << endl;
 }
+// Hàm thống kê số sách đang được mượn
 void thongKeSoSachDangDuocMuon(){
     int tong = 0;
     for (int i = 0; i < soLuongDocGia; i++)
     {
-        tong += soLuongSachMuon[i];
+        tong += soLuongSachMuon[i];         // Cộng tổng số sách đang được mượn
     }
     cout << "==================== THONG KE SO SACH DANG DUOC MUON ====================" << endl;
     cout << "Tong so sach dang duoc muon: " << tong << endl;
 }
+// Hàm thống kê độc giả quá hạn
 void thongKeDocGiaTreHan(){
     int treHan = 0;
     cout << "==================== THONG KE DOC GIA TRE HAN ====================\n";
     for (int i = 0; i < soLuongDocGia; i++) {
-        if (strlen(ngayTraDuKien[i]) > 0 && strlen(ngayTraThucTe[i]) > 0) {
+        if (strlen(ngayTraDuKien[i]) > 0 && strlen(ngayTraThucTe[i]) > 0) {         // Kiểm tra ngày mượn và ngày trả
             int ngayDuKien = chuyenNgayThanhSo(ngayTraDuKien[i]);
             int ngayThucTe = chuyenNgayThanhSo(ngayTraThucTe[i]);
 
-            if (ngayThucTe > ngayDuKien) {
-                treHan++;
+            if (ngayThucTe > ngayDuKien) {      // Nếu ngày trả muộn hơn thực tế
+                treHan++;   
+                // In thông tin độc giả bị trễ hạn
                 cout << "- " << hoTen[i] << endl;
                 cout << "  CMND: " << cmnd[i] << endl;
                 cout << "  Ngay muon: " << ngayMuon[i] << endl;
@@ -142,7 +166,3 @@ void thongKe(){
 }
 
 
-// int main() {
-//     thongKe(); // Gọi hàm thống kê
-//     return 0;
-// }

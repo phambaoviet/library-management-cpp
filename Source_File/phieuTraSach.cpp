@@ -1,3 +1,13 @@
+/*
+    File: phieuTraSach.cpp
+    Mô tả: 
+        - Chức năng xử lý trả sách của độc giả trong hệ thống quản lý thư viện.
+        - Bao gồm các hàm:
+            + timKiemSachTheoISBN(long long isbn)
+            + chuyenNgayThanhSo(char ngay[])
+            + traSach()
+    Người thực hiện: Phạm Bảo Việt - Nhập môn lập trình
+*/
 #include <iostream>
 #include <iomanip>
 #include <cstring>
@@ -125,8 +135,3 @@ void traSach() {
     cout << "\nTong tien phat: " << tongTienPhat << " VND" << endl;
     cout << "\nSach da duoc tra thanh cong!\n";
 }
-    
-// int main(){
-//     traSach();
-//     return 0;
-// }

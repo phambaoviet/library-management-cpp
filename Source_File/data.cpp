@@ -1,3 +1,11 @@
+/*
+    File: data.cpp
+    Mô tả: 
+        + Các biến toàn cục được khai báo cho các file header tương ứng.
+        + Các biến này dùng để quản lý thông tin độc giả, sách, phiếu mượn, và các thông tin liên quan trong hệ thống quản lý thư viện.
+    Người viết  : Phạm Bảo Việt - Nhập môn lập trình
+*/
+
 #include "../Header_File/docgia.h"
 #include "../Header_File/quanlysach.h"
 #include "../Header_File/muonSach.h"
